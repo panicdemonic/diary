@@ -1,0 +1,20 @@
+  <h1>My Rails Girls Diary</h1>
+    <div>
+      <p><%= link_to("New entry", new_entry_path) %></p>
+    </div>
+    <div>
+      <h2>Submitted a Rails Girls application</h2>
+      <p>1.02.2014</p>
+      <p>Just submitted an application to a Rails Girls workshop. Can't wait to see whether I'll get in!</p>
+      <p>TEST TEST</p>
+    </div>
+    <div>
+      <h1>My favourite websites</h1>
+        <% for entry in @entries %>
+          <h2>
+           <%= link_to(entry.title, entry_path(entry)) %>
+          </h2>
+          <p><%= entry.date %></p>
+          <p><%= entry.contents %></p>
+        <% end %>
+    </div>
